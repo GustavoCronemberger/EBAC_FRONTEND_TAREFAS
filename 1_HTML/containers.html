@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containers HTML</title>
+</head>
+<body>
+    <!--Antes do HTML5 só existia o <div> para fazer divisórias na página, mas ele não diferenciava cabeçalho, rodapé, etc., apenas dividia-->
+    <!--header é o cabeçalho, nav o menu, footer o rodapé, conteúdo da página será o main-->
+    <header>
+        <h1>Containers</h1>
+        <nav>
+            <a href="./inserir_textos.html">Home</a>
+        </nav>
+    </header>
+    <!--Section é a responsável por criar as seções de conteúdo na página
+        Article é a responsável por cada artigo/post da seção            -->
+    <main>
+        <div> <!--Ainda se usa a div, mas apenas para encapsulamento, como boa prática para usar o javascript, não de forma semântica-->
+            <section>
+                <h2>Jogos</h2>
+                <article>
+                    São Paulo derrota Corinthians e afunda o rival na zona de rebaixamento!
+                </article>
+            </section>
+                <h2>Economia</h2>
+                <article>
+                    Diretoria do São Paulo leva proposta para criação de fundo econômico, dando passo inicial para pagamento de dívidas.
+                </article>
+            </section>
+        </div>    
+    </main>
+    <!--Tag (semântica) para criar o corpo lateral na página, porém precisa do css e js para funcionar-->
+    <aside>
+        conteúdo
+    </aside>
+    <footer>
+        &copy; 2024 - Todos os direitos reservados
+    </footer>
+</body>
+</html>
