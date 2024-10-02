@@ -1,0 +1,148 @@
+/*<link rel="stylesheet" type="text/css href="./style.css" />  com isso no HTML incorporamos a página de css no projeto.
+
+Ao utilizar CSS, temos uma hierarquia. As modificações individuais sempre se sobreporão às gerais.
+1) Estipular cores gerais;
+2) Estipular cores individuais;
+
+Modifiação de elementos: Para organização do css, cada elemento pode ter seu próprio estilo. 
+    Classes usa-se o '.' antes do nome estipulado para essa classe. No exemplo temos uma cor para botões de envio e outra para botões de apagar, padronizando o projeto.
+
+    ID usa-se o '#' antes do nome do id. Não é recomendável padronizar css de id, melhor individualizar, ou seja, só haverá 1 tipo de id economy.
+
+    * É para tudo que não foi especificado.
+
+Box-sizing: Com ele o encaixe do conteúdo se adaptará para ficar "perfeito". Ainda que com mudanças de margin, padding, border, ele poderá cruzar os pixels previamente estipulados para ficar visualmente correto. Sempre fica no começo do projeto como padrão.
+
+Margin não altera em pixels o tamanho do conteúdo pré estipulado. Padding e Border deixará maior.
+
+Se digitar .container e dar enter no html, ele cria automaticamente a classe.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*Se somente utilizar o header, ele irá alterar todos os headers contidos no código
+Utilizando dessa forma, especifica que quer unicamente o header primeiro filho de body, que está no cabeçalho*/
+body > header {
+    background-color: #2f3640;
+    padding: 16px 0;
+    color: #f5f6fa;
+}
+/*Uso do flex para ficarem um ao lado do outro*/
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Aqui quero apenas os li do header. Display: como e se um elemento deve ser exebido.*/
+header li{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+}
+
+header li a{
+    color: #f5f6fa;
+    text-decoration: none;
+}
+
+/*Fazer containers ajuda a criar o conteúdo para diferentes tamanhos de telas*/
+.container {
+    width: 1366px; /*largura padrão em HD*/
+    margin: 0 auto 0 auto; /*Sentido horário: top, right, botton, left. Pode abreviar só com top e right se são iguais*/
+}
+/*O articles se torna uma extensão do container, com o uso do display flex se torna possível controlar o layout
+Com o flex-wrap faço o quebra linha, para não adicionar um novo conteúdo na mesma linha
+Com o justify-content deixo o espaço de folga igual entre os itens*/
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*Cuidado! caso não crie um padrão nas imagens, ela deixará o texto e os botões tortos*/
+.articles article img{
+    width: 100%;
+    height: 250px;
+}
+/*30% foi escolhido para dividir 3 notícias (100%) por row, tendo uma pequena folga de 10% nas margens.*/
+.articles article{
+    width: 30%;
+}
+/*Mesmo espaçamento dado no cabeçalho será utilizado para as sessões*/
+section {
+    padding: 16px 0;
+}
+
+section h2{
+    font-size: 32px;
+}
+
+/*Posso fazer múltiplas edições em elementos variados*/
+section h2,
+.articles article {
+    margin-bottom: 16px;
+}
+
+.articles article h3{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+/*Criando um "botão". Se não usar o display block as margens irão interferir no texto, pois por padrão o <a> usa inline apenas
+As tags <a> também usam o underline como padrão, então o text-decoration none retira isso.*/
+.articles article a{
+    color: #f5f6fa;
+    padding: 8px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/*Efeito para após passar o mouse pelo link, ele mostrará o underline.*/
+.articles article a:hover{
+    text-decoration: underline;
+}
+
+.articles article p
+.articles article a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#economy {
+    background-color: rgb(212, 211, 112);
+}
+
+#economy .articles article a{
+    background-color: rgb(150, 177, 16);
+}
+
+#sports {
+    background-color: rgba(0, 255,0, 0.1);
+}
+
+#sports .articles article a{
+    background-color: forestgreen;
+}
+
+#tecnology {
+    background-color: rgb(109, 21, 161);
+}
+
+#tecnology .articles article a{
+    background-color: rgb(48, 2, 74);
+}
+
+#entertainment {
+    background-color: cornflowerblue;
+}
+
+#entertainment .articles article a{
+    background-color: darkblue;
+}
