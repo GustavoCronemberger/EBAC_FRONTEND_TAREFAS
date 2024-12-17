@@ -1,0 +1,17 @@
+
+Para instalar o gulp: npm install --global gulp-cli
+Para iniciar o node: npm init
+Para configurar os módulos: npm install --save-dev gulp
+Para executar são os mesmos comandos como o sass: npm run gulp
+
+Lembre-se depois disso colocar o .gitignore com node modules
+
+Para realizar as tarefas de automação para compressão de imagens e outras, precisamos de alguns plugins, que são instalados com o: npm install --save-dev gulp-sass e npm install --save-dev sass
+npm install --save-dev gulp-sourcemaps 
+
+npm install --save-dev gulp-uglify
+npm run gulp javascript
+
+npm install --save-dev gulp-obfuscate
+
+npm install --save-dev gulp-imagemin
