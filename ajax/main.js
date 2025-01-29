@@ -5,19 +5,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const followingElement = document.querySelector('#following');
     const followersElement = document.querySelector('#followers');
     const reposElement = document.querySelector('#repos');
-    const linkgElement = document.querySelector('#link');
+    const linkElement = document.querySelector('#link');
 
-    fetch('https://api.github.com/users/GustavoCronemberger')
-    .then(function(res) {
-        return res.json()
-    })
-    .then(function(json) {
-        nameElement.innerText = json.name;
-        usernameElement.innerText = json.login;
-        avatarElement.src = json.avatar_url;
-        followingElement.innerText = json.following;
-        followersElement.innerText = json.followers;
-        repos.innerText = json.public_repos;
-        linkElement.href = json.html_url;
-    })
-})
+    setTimeout(function() {
+        fetch('https://api.github.com/users/GustavoCronemberger')
+        .then(function(res) {
+            if (!res.ok) {
+                throw new Error('Erro na requisição');
+            }
+            return res.json();
+        })
+        .then(function(json) {
+            nameElement.innerText = json.name;
+            usernameElement.innerText = json.login;
+            avatarElement.src = json.avatar_url;
+            followingElement.innerText = json.following;
+            followersElement.innerText = json.followers;
+            repos.innerText = json.public_repos;
+            linkElement.href = json.html_url;
+        })
+        .catch(function(erro) {
+            alert("Ocorreu um erro ao buscar o endereço, tente novamente mais tarde.")
+        })
+        .finally(function() {
+            console.log("Requisição finalizada.");
+        });
+    }, 900);
+});
